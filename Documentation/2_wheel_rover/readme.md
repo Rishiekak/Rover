@@ -48,6 +48,6 @@ Firstly we make transmiter to control rover by using joystick
 -  Attach Joystick on breadboard using double sided tape.
 -  Connect Esp 32 pins to joystick pin as per image
 - Get the MAC address of ESP 32 module
-- [How to get the MAC address of ESP 32](Documentation/how_read_mac_address_ESP32)
-- Upload the Transmiter code to esp 32 Module using Arduino IDE -[Code](Documentation/2_wheel_rover/transmiter_code.ino)
+- [How to get mac address of ESP 32 module](https://github.com/Rishiekak/Rover/tree/main/Documentation/how_read_mac_address_ESP32)
+- Upload the Transmiter code to esp 32 Module using Arduino IDE -[Code](https://github.com/Rishiekak/Rover/blob/main/Documentation/2_wheel_rover/transmiter_code.ino)
 - 
