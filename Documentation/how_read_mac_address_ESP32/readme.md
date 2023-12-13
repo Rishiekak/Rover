@@ -3,7 +3,6 @@
 
  - Connect ESP 32 module to laptop using cable.
  - Upload code to the Arduino IDE .
-[Code]Documentation/how_read_mac_address_ESP32/mac-address-esp32_code.ino
  -  Go to the tools in IDE.
  - Select ESP32 module .
  - Select port.
