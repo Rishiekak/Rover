@@ -39,3 +39,5 @@ After completing the wiring, it’s time to assemble the roof and any other prop
 [Code](Documentation/4_wheel_rover/Code.py)
 
 Upload this code to ESP32 and you are ready to go. You can now turn the mobile application ON and connect with the car (you may have to pair your bluetooth first from bluetooth settings)
+
+#### Pin number may be neede to interchange 
