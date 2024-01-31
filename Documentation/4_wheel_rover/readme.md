@@ -23,7 +23,7 @@ Now take there wires up into the body & check if they are working by connecting 
 So if they all are working check direction of left and right motors, both left motors should run forward with some wire config, combine those wires so now you have combined 4 wires into 2 each side.
 
 Now take ESP32 & L298n motor driver and connect your motors like this as per this circuit diagram:
-"C:\Users\rishi\OneDrive\Pictures\Screenshots\Screenshot 2024-01-31 154702.png"
+![Uploading image.png…]()
 
 
 ESP32 with l298n Motor driver connections
