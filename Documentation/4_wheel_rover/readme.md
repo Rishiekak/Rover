@@ -15,13 +15,16 @@
 ## Process
 
 4 wheel & DC motors arrangement
+![image](https://github.com/Rishiekak/Rover/assets/129143946/71927087-8c0b-4936-bb14-7d12bd1bf2d1)
+
 
 Now take there wires up into the body & check if they are working by connecting them directly with power source or battery(this is important as if they are not working then you might have to face trouble taking them out again later)
 
 So if they all are working check direction of left and right motors, both left motors should run forward with some wire config, combine those wires so now you have combined 4 wires into 2 each side.
 
 Now take ESP32 & L298n motor driver and connect your motors like this as per this circuit diagram:
-Photo\
+![image](https://github.com/Rishiekak/Rover/assets/129143946/eb43aeca-af6a-44f5-b972-33057eefef16)
+
 
 ESP32 with l298n Motor driver connections
 
