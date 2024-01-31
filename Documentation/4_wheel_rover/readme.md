@@ -36,6 +36,6 @@ All you need to do is connect 4 wires from ESP, we have used pins 12, 14, 26, an
 Then connect the positive terminal of the battery to the 12V block of L298n and the negative to Ground, also connect ground and 5V with ESP32 ground and Vin.
 
 After completing the wiring, it’s time to assemble the roof and any other props you need & get started with coding. First of all you should try to manually provide pulses by using a simple code into ESP32 and see if the motors are moving. After testing the motors out, here is code to run Bluetooth-controlled RC Car:
-Code
+[Code](Documentation/4_wheel_rover/Code.py)
 
 Upload this code to ESP32 and you are ready to go. You can now turn the mobile application ON and connect with the car (you may have to pair your bluetooth first from bluetooth settings)
