@@ -1,1 +1,118 @@
+#include <ESP32Servo.h>
+#include <NewPing.h>
+#include <BluetoothSerial.h>
 
+// Define ultrasonic sensor pins
+#define TRIGGER_PIN 33
+#define ECHO_PIN 32
+#define MAX_DISTANCE 200
+
+// Define motor pins
+#define MOTOR_A_EN 12
+#define MOTOR_A_IN1 14
+#define MOTOR_A_IN2 26
+#define MOTOR_B_EN 27
+#define MOTOR_B_IN1 25
+#define MOTOR_B_IN2 33
+
+// Define Bluetooth pins
+#define BLUETOOTH_SERIAL_RX 16
+#define BLUETOOTH_SERIAL_TX 17
+
+BluetoothSerial SerialBT;
+
+// Define servo motors
+Servo servo1;
+Servo servo2;
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
+
+void setup() {
+  Serial.begin(9600);
+  SerialBT.begin("ESP32_Rover"); //Bluetooth device name
+  pinMode(MOTOR_A_EN, OUTPUT);
+  pinMode(MOTOR_A_IN1, OUTPUT);
+  pinMode(MOTOR_A_IN2, OUTPUT);
+  pinMode(MOTOR_B_EN, OUTPUT);
+  pinMode(MOTOR_B_IN1, OUTPUT);
+  pinMode(MOTOR_B_IN2, OUTPUT);
+
+  servo1.attach(18); // Servo1 connected to pin 18
+  servo2.attach(19); // Servo2 connected to pin 19
+}
+
+void loop() {
+  if (SerialBT.available()) {
+    char command = SerialBT.read();
+    handleCommand(command);
+  }
+
+  delay(50); // Delay to stabilize readings
+}
+
+void handleCommand(char command) {
+  switch (command) {
+    case 'F':
+      forward();
+      break;
+    case 'B':
+      backward();
+      break;
+    case 'L':
+      left();
+      break;
+    case 'R':
+      right();
+      break;
+    case 'S':
+      stop();
+      break;
+    default:
+      break;
+  }
+}
+
+void forward() {
+  digitalWrite(MOTOR_A_IN1, HIGH);
+  digitalWrite(MOTOR_A_IN2, LOW);
+  digitalWrite(MOTOR_B_IN1, HIGH);
+  digitalWrite(MOTOR_B_IN2, LOW);
+  analogWrite(MOTOR_A_EN, 255);
+  analogWrite(MOTOR_B_EN, 255);
+}
+
+void backward() {
+  digitalWrite(MOTOR_A_IN1, LOW);
+  digitalWrite(MOTOR_A_IN2, HIGH);
+  digitalWrite(MOTOR_B_IN1, LOW);
+  digitalWrite(MOTOR_B_IN2, HIGH);
+  analogWrite(MOTOR_A_EN, 255);
+  analogWrite(MOTOR_B_EN, 255);
+}
+
+void left() {
+  digitalWrite(MOTOR_A_IN1, LOW);
+  digitalWrite(MOTOR_A_IN2, HIGH);
+  digitalWrite(MOTOR_B_IN1, HIGH);
+  digitalWrite(MOTOR_B_IN2, LOW);
+  analogWrite(MOTOR_A_EN, 255);
+  analogWrite(MOTOR_B_EN, 255);
+}
+
+void right() {
+  digitalWrite(MOTOR_A_IN1, HIGH);
+  digitalWrite(MOTOR_A_IN2, LOW);
+  digitalWrite(MOTOR_B_IN1, LOW);
+  digitalWrite(MOTOR_B_IN2, HIGH);
+  analogWrite(MOTOR_A_EN, 255);
+  analogWrite(MOTOR_B_EN, 255);
+}
+
+void stop() {
+  digitalWrite(MOTOR_A_IN1, LOW);
+  digitalWrite(MOTOR_A_IN2, LOW);
+  digitalWrite(MOTOR_B_IN1, LOW);
+  digitalWrite(MOTOR_B_IN2, LOW);
+  analogWrite(MOTOR_A_EN, 0);
+  analogWrite(MOTOR_B_EN, 0);
+}
