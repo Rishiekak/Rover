@@ -33,8 +33,8 @@
  -Attach wheels on 3D printing Rover model
  
  - Set the arduino Uno and motor driver and connection chip on the Rover using doublesided tape and integrate them using Jumper wires with the help of circuit diagram.
-  ![Screenshot 2024-02-10 144034](https://github.com/Rishiekak/Rover/assets/129143946/590748b4-8a5e-4fe8-928d-2b875c50a977)
+  ![Screenshot 2024-02-10 144034](https://github.com/Rishiekak/Rover/assets/129143946/ec198079-d9f3-4155-8dff-735a4789ad0b)
 
- - Now Upload the Code in Arduino uno using Arduino uno
+ - Now Upload the code (https://github.com/Rishiekak/Rover/blob/main/Documentation/6%20wheel%20Rover/Code.ino) in Arduino uno using Arduino uno
  - Attach battery to the board using battery connector.
  - Ready to move.
